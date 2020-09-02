@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 //import { CATEGORIES } from './data'
 import Categories from './Categories';
-import Task from './Task';
+//import Task from './Task';
 import TaskList from './TaskList';
+import NewTaskForm from './NewTaskForm'
 
 class App extends React.Component {
 
@@ -38,8 +39,9 @@ class App extends React.Component {
         category: 'Misc'
       }
     ],
-    filterCategory: []
+    filterCategory: "All"
   }
+
 
 
   //  renderAll = () => {
@@ -52,6 +54,8 @@ class App extends React.Component {
   //   })
     
   // }
+  
+  //!==
 
   // filterTask = () => {
   //   if(this.state.filterCategory === "All"){
@@ -69,6 +73,8 @@ class App extends React.Component {
     })
   }
 
+ 
+
   //I need it so when i click on a button only the task with that category on displays itself. I am
   //able to tell what I am clicking on currently due to line 67, however, I am having a hard time
   //understanding how to filter it out and get it to render on the page. What steps are next for me?
@@ -77,14 +83,20 @@ class App extends React.Component {
   //call on that and look for what the targets innerText is. Now I have to render the filtered list
   //just now where do i do that is the question. I have a feeling we have to do it inside the taskList.
   //
+
+  addTask = (newTask) => {
+    this.setState({tasks: [...this.state.tasks, newTask]})
+  }
   
 
   render() {
+    
     return (
       <div className="App">
         <h2>My tasks</h2>
         <Categories catHandler={this.catHandler}/>
-        <TaskList tasks={this.state.tasks} filterCategory={this.filterCategory}/>
+        <NewTaskForm />
+        <TaskList tasks={this.state.tasks} filterTask={this.filterTask} />
       </div>
     );
   }
