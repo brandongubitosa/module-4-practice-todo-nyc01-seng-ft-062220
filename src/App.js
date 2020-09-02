@@ -38,22 +38,34 @@ class App extends React.Component {
         category: 'Misc'
       }
     ],
-    filterCategory: []
+    filterCategory: "All"
   }
 
+
+  //  renderAll = () => {
+  //    return this.state.filterCategory.map(task => <Task task={task}/>)
+  //  }  
+
+  filterTask = () => {
+    if(this.state.filterCategory === "All"){
+      return this.state.tasks
+    }else {
+      return this.state.tasks.filter(task => task.category === this.state.filterCategory)
+    }
+  }
 
 
   
-  catHandler = (event) => {
-    console.log(event.target)
-  }
+  // catHandler = (event) => {
+  // console.log(event.target)
+  // }
   
 
   render() {
     return (
       <div className="App">
         <h2>My tasks</h2>
-        <Categories catHandler={this.catHandler}/>
+        <Categories filterTask={this.filterTask}/>
         <TaskList tasks={this.state.tasks} />
       </div>
     );
