@@ -38,7 +38,7 @@ class App extends React.Component {
         category: 'Misc'
       }
     ],
-    filterCategory: "All"
+    filterCategory: []
   }
 
 
