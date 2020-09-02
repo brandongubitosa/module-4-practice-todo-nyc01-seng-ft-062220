@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 import { CATEGORIES } from './data'
+import Categories from './Categories';
+import Task from './Task';
+import TaskList from './TaskList';
 
 class App extends React.Component {
 
@@ -37,10 +40,19 @@ class App extends React.Component {
     ]
   }
 
+  
+  catHandler = (e) => {
+    console.log(e.target)
+    
+  }
+  
+
   render() {
     return (
       <div className="App">
         <h2>My tasks</h2>
+        <Categories catHandler={this.catHandler}/>
+        <TaskList tasks={this.state.tasks}/>
       </div>
     );
   }
