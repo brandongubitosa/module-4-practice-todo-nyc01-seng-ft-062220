@@ -13,16 +13,21 @@ class Categories extends React.Component{
 //       }
 //   }
 
+    catHandler = (event) => {
+        this.props.catHandler(event.target.innerText)
+        console.log(event.target.innerText)
+    }
+
 
     render(){
 
         return(
             <div className="categories"><h3>Category Filters</h3>
-                <button onClick={this.props.catHandler}>All</button>
-                <button onClick={this.props.catHandler}>Code</button>
-                <button onClick={this.props.catHandler}>Food</button>
-                <button onClick={this.props.catHandler}>Money</button>
-                <button onClick={this.props.catHandler}>Misc</button>
+                <button onClick={this.catHandler}>All</button>
+                <button onClick={this.catHandler}>Code</button>
+                <button onClick={this.catHandler}>Food</button>
+                <button onClick={this.catHandler}>Money</button>
+                <button onClick={this.catHandler}>Misc</button>
             </div>
         )
     }

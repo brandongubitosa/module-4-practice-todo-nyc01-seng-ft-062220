@@ -38,7 +38,7 @@ class App extends React.Component {
         category: 'Misc'
       }
     ],
-    filterCategory: []
+    filterCategory: ''
   }
 
 
@@ -63,14 +63,20 @@ class App extends React.Component {
 
 
   
-  catHandler = (event) => {
-    console.log(event.target)
+  catHandler = (catObj) => {
+    this.setState({
+      filterCategory: catObj
+    })
   }
 
   //I need it so when i click on a button only the task with that category on displays itself. I am
   //able to tell what I am clicking on currently due to line 67, however, I am having a hard time
   //understanding how to filter it out and get it to render on the page. What steps are next for me?
   //this is where I am struggling with the flow of things.
+  //1:52pm update. I now know I needed to set the state in lines 66-69 and then in categories
+  //call on that and look for what the targets innerText is. Now I have to render the filtered list
+  //just now where do i do that is the question. I have a feeling we have to do it inside the taskList.
+  //
   
 
   render() {
