@@ -8,6 +8,7 @@ class TaskList extends React.Component {
         return this.props.tasks.map(task => <Task task={task} />)
     }
     render() {
+
         return (
             <div className="tasks">
                {this.taskLst()} 

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { CATEGORIES } from './data'
+//import { CATEGORIES } from './data'
 import Categories from './Categories';
 import Task from './Task';
 import TaskList from './TaskList';
@@ -37,13 +37,15 @@ class App extends React.Component {
         text: 'Tidy house',
         category: 'Misc'
       }
-    ]
+    ],
+    filterCategory: "All"
   }
 
+
+
   
-  catHandler = (e) => {
-    console.log(e.target)
-    
+  catHandler = (event) => {
+    console.log(event.target)
   }
   
 
@@ -52,7 +54,7 @@ class App extends React.Component {
       <div className="App">
         <h2>My tasks</h2>
         <Categories catHandler={this.catHandler}/>
-        <TaskList tasks={this.state.tasks}/>
+        <TaskList tasks={this.state.tasks} />
       </div>
     );
   }
