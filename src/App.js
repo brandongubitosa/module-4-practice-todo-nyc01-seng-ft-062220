@@ -38,7 +38,7 @@ class App extends React.Component {
         category: 'Misc'
       }
     ],
-    filterCategory: ''
+    filterCategory: []
   }
 
 
@@ -84,7 +84,7 @@ class App extends React.Component {
       <div className="App">
         <h2>My tasks</h2>
         <Categories catHandler={this.catHandler}/>
-        <TaskList tasks={this.state.tasks} />
+        <TaskList tasks={this.state.tasks} filterCategory={this.filterCategory}/>
       </div>
     );
   }
