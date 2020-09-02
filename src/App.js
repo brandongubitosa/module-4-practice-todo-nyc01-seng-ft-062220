@@ -38,7 +38,7 @@ class App extends React.Component {
         category: 'Misc'
       }
     ],
-    filterCategory: "All"
+    filterCategory: []
   }
 
 
@@ -46,26 +46,38 @@ class App extends React.Component {
   //    return this.state.filterCategory.map(task => <Task task={task}/>)
   //  }  
 
-  filterTask = () => {
-    if(this.state.filterCategory === "All"){
-      return this.state.tasks
-    }else {
-      return this.state.tasks.filter(task => task.category === this.state.filterCategory)
-    }
-  }
+  // filterTask = (event) => {
+  //   this.setState({
+  //     filterCategory: event.target.value
+  //   })
+    
+  // }
+
+  // filterTask = () => {
+  //   if(this.state.filterCategory === "All"){
+  //     return this.state.tasks
+  //   }else {
+  //     return this.state.tasks.filter(task => task.category === this.state.filterCategory)
+  //   }
+  // }
 
 
   
-  // catHandler = (event) => {
-  // console.log(event.target)
-  // }
+  catHandler = (event) => {
+    console.log(event.target)
+  }
+
+  //I need it so when i click on a button only the task with that category on displays itself. I am
+  //able to tell what I am clicking on currently due to line 67, however, I am having a hard time
+  //understanding how to filter it out and get it to render on the page. What steps are next for me?
+  //this is where I am struggling with the flow of things.
   
 
   render() {
     return (
       <div className="App">
         <h2>My tasks</h2>
-        <Categories filterTask={this.filterTask}/>
+        <Categories catHandler={this.catHandler}/>
         <TaskList tasks={this.state.tasks} />
       </div>
     );
