@@ -5,9 +5,10 @@ class Home extends React.Component {
     return (
     <div className="Home">
 
-        <h1>Welcome to Brandon Gubitosa's ToDo List!</h1>
+        <h1>Welcome to Brandon Gubitosa's To Do List!</h1>
+        
 
-        <p>Please Come Back For More Updates!</p>
+        <img alt="ny" src="https://hoodline.imgix.net/uploads/story/image/522614/..destination_photo_url..NYCA-sky.jpg.jpg?auto=format" />
 
     </div>
     
