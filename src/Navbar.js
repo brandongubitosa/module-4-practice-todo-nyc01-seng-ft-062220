@@ -30,11 +30,6 @@ class Navbar extends React.Component {
         >
         Enter Task
         </NavLink>
-        <NavLink 
-            to="/categories"
-        >
-        Categories
-        </NavLink>
  
       </div>
     )

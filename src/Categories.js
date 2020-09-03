@@ -3,16 +3,6 @@ import React from 'react'
 
 class Categories extends React.Component{
 
- 
-
-//   filterTask = (event) => {
-//       this.props.filterTask(event)
-//       if(this.props.filterCategory === "All"){
-//           return this.props.tasks
-//       }else{
-//           return this.props.tasks.filter(task => task.category === this.props.filterCategory)
-//       }
-//   }
 
     catHandler = (event) => {
         this.props.catHandler(event)
