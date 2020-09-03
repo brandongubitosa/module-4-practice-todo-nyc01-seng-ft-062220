@@ -88,9 +88,7 @@ class App extends React.Component {
   //just now where do i do that is the question. I have a feeling we have to do it inside the taskList.
   //
 
-  // addTask = (newTask) => {
-  //   this.setState({tasks: [...this.state.tasks, newTask]})
-  // }
+
   
 
   render() {
@@ -100,7 +98,7 @@ class App extends React.Component {
         <h2>My tasks</h2>
         <Categories catHandler={this.catHandler} categories={CATEGORIES}/>
         <NewTaskForm />
-        <TaskList tasks={this.state.tasks} filterTask={this.filterTask} />
+        <TaskList tasks={this.state.tasks} />
       </div>
     );
   }
