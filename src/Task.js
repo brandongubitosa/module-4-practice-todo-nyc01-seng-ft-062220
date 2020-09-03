@@ -7,7 +7,7 @@ class Task extends React.Component {
             <div className="task">
               <div className="label">{this.props.task.category}</div>
               <div className="text">{this.props.task.text}</div>
-              <button className="delete">X</button>
+              <button className="delete" onClick={this.props.byeTask}>X</button>
             </div>
         )
     }

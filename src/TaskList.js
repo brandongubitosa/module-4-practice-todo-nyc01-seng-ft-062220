@@ -11,9 +11,14 @@ class TaskList extends React.Component {
     //now i need to add an if else statement for the category that was selected to 
     //filter it out
 
+    //this doesnt work properly as it doesnt remove the whole line of code
+    byeTask = (event) => {
+        event.target.previousElementSibling.remove()
+    }
+
     
     taskLst = () => {
-        return this.props.tasks.map(task => <Task task={task} />)
+        return this.props.tasks.map(task => <Task task={task} byeTask={this.byeTask}/>)
     }
     render() {
 
