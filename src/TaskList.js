@@ -14,6 +14,7 @@ class TaskList extends React.Component {
     //this doesnt work properly as it doesnt remove the whole line of code
     //update changed it to parentElement from Previous ELement sibling and
     //it worked deleting the whole task
+    
     byeTask = (event) => {
         event.target.parentElement.remove()
     }
