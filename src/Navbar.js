@@ -31,7 +31,7 @@ class Navbar extends React.Component {
           activeStyle={{
             background: 'darkblue'
           }}
-        >About</NavLink>
+        >About Me</NavLink>
         <NavLink
           to="/login"
           exact
@@ -39,7 +39,7 @@ class Navbar extends React.Component {
           activeStyle={{
             background: 'darkblue'
           }}
-        >Login</NavLink>
+        >Sign Up</NavLink>
         <NavLink 
             to="/app"
             exact
@@ -48,6 +48,15 @@ class Navbar extends React.Component {
                 background: 'darkblue'
             }}
         >To Do List</NavLink>
+        <NavLink 
+            to="/newtaskform"
+            exact
+            style={link}
+            activeStyle={{
+                background: 'darkblue'
+            }}
+        >Enter A New Task</NavLink>
+ 
       </div>
     )
   }

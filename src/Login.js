@@ -4,7 +4,7 @@ class Login extends React.Component {
   render() {
     return (
       <form>
-        <h1>Login</h1>
+        <h1>Sign Up</h1>
         <div>
           <input type="text" name="username" placeholder="Username" />
           <label htmlFor="username">Username</label>
