@@ -8,6 +8,8 @@ class TaskList extends React.Component {
     //and no its not. Gave me map is undefined, probably bc it does
     //not know what fitlerCategory is.
     //return this.props.filterCategory.map(task => <Task tasj={task} />)
+    //now i need to add an if else statement for the category that was selected to 
+    //filter it out
 
     
     taskLst = () => {

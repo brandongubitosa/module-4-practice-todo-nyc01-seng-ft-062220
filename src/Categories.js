@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 class Categories extends React.Component{
 
  
@@ -14,20 +15,38 @@ class Categories extends React.Component{
 //   }
 
     catHandler = (event) => {
-        this.props.catHandler(event.target.innerText)
-        console.log(event.target.innerText)
+        this.props.catHandler(event)
     }
+
+    categories = () => {
+        return this.props.categories.map((category) => {
+          if (this.props.category === category) {
+            return (
+              <button
+                onClick={this.clickHandler}
+                value={category}
+                className="selected"
+              >
+                {category}
+              </button>
+            )
+          } else {
+            return (
+              <button onClick={this.clickHandler} value={category}>
+                {category}
+              </button>
+            )
+          }
+        })
+      }
 
 
     render(){
+       
 
         return(
             <div className="categories"><h3>Category Filters</h3>
-                <button onClick={this.catHandler}>All</button>
-                <button onClick={this.catHandler}>Code</button>
-                <button onClick={this.catHandler}>Food</button>
-                <button onClick={this.catHandler}>Money</button>
-                <button onClick={this.catHandler}>Misc</button>
+                {this.categories()}
             </div>
         )
     }

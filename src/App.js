@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-//import { CATEGORIES } from './data'
+import { CATEGORIES } from './data'
 import Categories from './Categories';
 //import Task from './Task';
 import TaskList from './TaskList';
@@ -42,6 +42,10 @@ class App extends React.Component {
     filterCategory: "All"
   }
 
+  catHandler = (event) => {
+    this.setState({filterCategory: event.target.value})
+  }
+
 
 
   //  renderAll = () => {
@@ -67,11 +71,11 @@ class App extends React.Component {
 
 
   
-  catHandler = (catObj) => {
-    this.setState({
-      filterCategory: catObj
-    })
-  }
+  // catHandler = (catObj) => {
+  //   this.setState({
+  //     filterCategory: catObj
+  //   })
+  // }
 
  
 
@@ -84,9 +88,9 @@ class App extends React.Component {
   //just now where do i do that is the question. I have a feeling we have to do it inside the taskList.
   //
 
-  addTask = (newTask) => {
-    this.setState({tasks: [...this.state.tasks, newTask]})
-  }
+  // addTask = (newTask) => {
+  //   this.setState({tasks: [...this.state.tasks, newTask]})
+  // }
   
 
   render() {
@@ -94,7 +98,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <h2>My tasks</h2>
-        <Categories catHandler={this.catHandler}/>
+        <Categories catHandler={this.catHandler} categories={CATEGORIES}/>
         <NewTaskForm />
         <TaskList tasks={this.state.tasks} filterTask={this.filterTask} />
       </div>
