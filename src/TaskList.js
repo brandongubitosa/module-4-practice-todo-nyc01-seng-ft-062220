@@ -26,10 +26,12 @@ class TaskList extends React.Component {
     render() {
 
         return (
-            
+          
             <div className="tasks">
+                <h2>My tasks</h2>
                {this.taskLst()} 
             </div>
+           
         )
     }
 }

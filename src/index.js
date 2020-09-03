@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import Home from './Home'
-import About from './About'
-import Login from './Login'
-import Navbar from './Navbar'
-import NewTaskForm from './NewTaskForm'
+// import Home from './Home'
+// import About from './About'
+// import Login from './Login'
+// import Navbar from './Navbar'
+// import NewTaskForm from './NewTaskForm'
 
 
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+// import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 //after i added newTaskForm to this i noticed that it gives me an error if i try to submit from the Enter New Task Link
 //TypeError: This.props.submitHandler is not a function. Need to figure out why its an error
@@ -25,20 +25,23 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 //   22 | }
 //   23 | 
 
-ReactDOM.render((
-    <Router>
-        <div>
-            <Navbar />
-            <Route exact path="/" component={Home} />
-            <Route exact path="/about" component={About} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/newTaskForm" component={NewTaskForm} />
-            <Route exact path ="/app" component={App} />
+// ReactDOM.render((
+//     <Router>
+//         <>
+//             <Route path="/welcome" render={()=> <h1>This is not the header</h1>}/>
+//             <Navbar />
+//             <Route exact path="/" component={Home} />
+//             <Route exact path="/about" component={About} />
+//             <Route exact path="/login" component={Login} />
+//             <Route exact path="/newTaskForm" component={NewTaskForm} />
+//             <Route exact path ="/app" component={App} />
             
-        </div> 
-    </Router>),
-document.getElementById('root')
-);
+//         </> 
+//     </Router>),
+// document.getElementById('root')
+// );
+
+ReactDOM.render(<App />,document.getElementById('root'));
 
 
 

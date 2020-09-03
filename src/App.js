@@ -1,10 +1,17 @@
 import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.css';
 import { CATEGORIES } from './data'
 import Categories from './Categories';
 //import Task from './Task';
 import TaskList from './TaskList';
 import NewTaskForm from './NewTaskForm'
+import Home from './Home'
+import About from './About'
+import Login from './Login'
+import Navbar from './Navbar';
+// import Navbar from './Navbar'
+
 
 class App extends React.Component {
 
@@ -98,15 +105,24 @@ class App extends React.Component {
   render() {
     
     return (
-      <div className="App">
-        <h2>My tasks</h2>
-        <Categories catHandler={this.catHandler} categories={CATEGORIES}/>
-        <NewTaskForm submitHandler={this.submitHandler}/>
-        <TaskList tasks={this.state.tasks} />
-      </div>
-    );
+      <Router>
+        <div className="App">
+        <Navbar />
+            <Route exact path="/" component={Home} />
+            <Route path="/login" component={Login} />
+            <Route path="/about" component={About} />
+            <Route path="/categories" render={()=> <Categories catHandler={this.catHandler} categories={CATEGORIES} />}/>
+            <Route path="/tasklist" render={()=> <TaskList tasks={this.state.tasks} />} />
+            <Route path="/newtaskform" render={()=> <NewTaskForm submitHandler={this.submitHandler} />}/>
+
+      
+        </div>
+      </Router>
+    )
   }
 }
+
+      
 
 
 export default App;
