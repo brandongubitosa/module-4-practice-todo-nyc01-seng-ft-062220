@@ -120,6 +120,9 @@ class App extends React.Component {
                     catHandler={this.catHandler}
                   />
 
+                  <NewTaskForm 
+                  submitHandler={this.submitHandler}
+                  />
                   <TaskList
                     tasks={this.state.tasks}
                   />
