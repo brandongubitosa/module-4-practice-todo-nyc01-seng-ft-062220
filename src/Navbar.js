@@ -1,8 +1,6 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom';
  
-
- 
 class Navbar extends React.Component {
   render() {
     return (
@@ -31,6 +29,11 @@ class Navbar extends React.Component {
             to="/newtaskform"
         >
         Enter Task
+        </NavLink>
+        <NavLink 
+            to="/categories"
+        >
+        Categories
         </NavLink>
  
       </div>
