@@ -98,6 +98,19 @@ class App extends React.Component {
   //just now where do i do that is the question. I have a feeling we have to do it inside the taskList.
   //
 
+  loginHandler = (userObj) => {
+    fetch("http://localhost:3000/api/v1/users", {
+      method: "POST",
+      headers: {
+        "accepts": "application/json",
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({user: userObj})
+    })
+    .then(resp => resp.json())
+    .then(console.log)
+  }
+
 
 
 
@@ -110,7 +123,7 @@ class App extends React.Component {
         <div className="App">
         <Navbar />
             <Route exact path="/" component={Home} />
-            <Route path="/login" component={Login} />
+            <Route path="/login" render={()=> <Login submitHandler={this.loginHandler} />} />
             <Route path="/about" component={About} />
             <Route path="/newtaskform" render={()=> <NewTaskForm user={this.state.user} submitHandler={this.submitHandler} />}/>
             <Route
@@ -121,13 +134,13 @@ class App extends React.Component {
                   <Categories
                     categories={CATEGORIES}
                     catHandler={this.catHandler}
-                    
+                    user={this.state.user}
                   />
 
                   <NewTaskForm 
                   submitHandler={this.submitHandler}
-                  user={this.state.user}
                   />
+
                   <TaskList
                     tasks={this.state.tasks}
                     

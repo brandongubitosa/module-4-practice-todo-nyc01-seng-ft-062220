@@ -42,7 +42,7 @@ class NewTaskForm extends React.Component {
         
         :
 
-        <Redirect to="/home" />
+        <Redirect to="/login" />
 
             }
 
