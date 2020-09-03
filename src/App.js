@@ -45,6 +45,10 @@ class App extends React.Component {
   catHandler = (event) => {
     this.setState({filterCategory: event.target.value})
   }
+//got the submit handler to work
+  submitHandler = (catObj) => {
+    this.setState({tasks: [...this.state.tasks, catObj]})
+  }
 
 
 
@@ -97,7 +101,7 @@ class App extends React.Component {
       <div className="App">
         <h2>My tasks</h2>
         <Categories catHandler={this.catHandler} categories={CATEGORIES}/>
-        <NewTaskForm />
+        <NewTaskForm submitHandler={this.submitHandler}/>
         <TaskList tasks={this.state.tasks} />
       </div>
     );

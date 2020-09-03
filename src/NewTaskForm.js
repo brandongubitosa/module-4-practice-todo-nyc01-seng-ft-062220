@@ -9,6 +9,7 @@ class NewTaskForm extends React.Component {
     }
 
     handleChange = (event) => {
+        console.log("Change", event.target.value)
         this.setState({
             [event.target.name]: event.target.value
         })
@@ -16,12 +17,8 @@ class NewTaskForm extends React.Component {
 
     submitHandler = (event) => {
         event.preventDefault()
-        let newTask = {
-            text: this.state.text,
-            category: this.state.category
-        }
-        //need to add something here
-      
+        this.props.submitHandler(this.state)
+        this.setState({text: "", category: "",...this.state}, console.log(this.state))
     }
 
 
