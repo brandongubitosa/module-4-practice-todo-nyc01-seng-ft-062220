@@ -1,4 +1,5 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom'
 
 class NewTaskForm extends React.Component {
 
@@ -24,17 +25,29 @@ class NewTaskForm extends React.Component {
 
     render() {
         return (
-        <form className="new-task-form" onSubmit={this.submitHandler}>
-        <input name="text" placeholder="New Task Details" type="text" value={this.state.text} onChange={this.handleChange}></input>
-          <select value={this.state.category} name="category" onChange={this.handleChange} >
-              <option>Code</option>
-              <option>Food</option>
-              <option>Money</option>
-              <option>Misc</option>
-          </select>
-          <input type="submit" name="submit" value="Add task" ></input>
+            <>
+            {this.props.user ?
+            
+            <form className="new-task-form" onSubmit={this.submitHandler}>
+            <input name="text" placeholder="New Task Details" type="text" value={this.state.text} onChange={this.handleChange}></input>
+              <select value={this.state.category} name="category" onChange={this.handleChange} >
+                  <option>Code</option>
+                  <option>Food</option>
+                  <option>Money</option>
+                  <option>Misc</option>
+              </select>
+              <input type="submit" name="submit" value="Add task" ></input>
+    
+            </form>
+        
+        :
 
-        </form>
+        <Redirect to="/home" />
+
+            }
+
+        </>
+
 
         )
     }

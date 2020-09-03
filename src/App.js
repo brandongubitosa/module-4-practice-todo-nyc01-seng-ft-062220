@@ -44,7 +44,8 @@ class App extends React.Component {
         category: 'Misc'
       }
     ],
-    filterCategory: "All"
+    filterCategory: "All",
+    user: null
   }
 
   catHandler = (event) => {
@@ -98,6 +99,8 @@ class App extends React.Component {
   //
 
 
+
+
   
 
   render() {
@@ -109,7 +112,7 @@ class App extends React.Component {
             <Route exact path="/" component={Home} />
             <Route path="/login" component={Login} />
             <Route path="/about" component={About} />
-            <Route path="/newtaskform" render={()=> <NewTaskForm submitHandler={this.submitHandler} />}/>
+            <Route path="/newtaskform" render={()=> <NewTaskForm user={this.state.user} submitHandler={this.submitHandler} />}/>
             <Route
             path="/tasklist"
             render={() => {
@@ -118,13 +121,16 @@ class App extends React.Component {
                   <Categories
                     categories={CATEGORIES}
                     catHandler={this.catHandler}
+                    
                   />
 
                   <NewTaskForm 
                   submitHandler={this.submitHandler}
+                  user={this.state.user}
                   />
                   <TaskList
                     tasks={this.state.tasks}
+                    
                   />
                 </>
               )
@@ -141,5 +147,4 @@ class App extends React.Component {
 
 export default App;
 
-{/* <Route path="/categories" render={()=> <Categories catHandler={this.catHandler} categories={CATEGORIES} />}/>
-<Route path="/tasklist" render={()=> <TaskList tasks={this.state.tasks} />} /> */}
+

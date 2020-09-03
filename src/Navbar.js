@@ -8,12 +8,12 @@ class Navbar extends React.Component {
         <NavLink
           to="/"
         >
-        Home
+        Home  
           </NavLink>
         <NavLink
           to="/about"
         >
-        About Me
+        About Me 
           </NavLink>
         <NavLink
           to="/login"

@@ -1,6 +1,7 @@
 import React from 'react'
 import Task from './Task.js'
 
+
 class TaskList extends React.Component {
 
     //i need to now filter through the filterCategory array here
